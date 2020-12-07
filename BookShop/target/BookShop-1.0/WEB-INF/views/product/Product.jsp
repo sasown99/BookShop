@@ -34,33 +34,14 @@
                     </div>
                     <div class="left-menu mb-30">
                         <ul>
-                            <li><a href="TruyenTranh">Truyện tranh<span>(@ViewBag.tt)</span></a></li>
-                            <li><a href="SachThieuNhi">Sách thiếu nhi<span>(@ViewBag.stn)</span></a></li>
-                            <li><a href="GiaoTrinh">Giáo trình<span>(@ViewBag.gt)</span></a></li>
-                            <li><a href="VanHoc">Văn học<span>(@ViewBag.vh)</span></a></li>
+                            <c:forEach var="item" items="${listLoaiSach}">
+                            	 <li><a href="VanHoc">${item.tenLoaiSach }<span></span></a></li>
+                            </c:forEach>
+                           
                         </ul>
                     </div>
-                    <div class="left-title mb-20">
-                        <h4>Nhà phát hành</h4>
-                    </div>
-                    <div class="left-menu mb-30">
-                        <ul>
-                            <li><a href="KD">Kim Đồng<span>(@ViewBag.kd)</span></a></li>
-                            <li><a href="NN">Nhã Nam<span>(@ViewBag.nn)</span></a></li>
-                            <li><a href="VL">Văn Lang<span>(@ViewBag.vl)</span></a></li>
-                            <li><a href="AB">Alpha Books<span>(@ViewBag.ab)</span></a></li>
-                        </ul>
-                    </div>
-                    <div class="left-title mb-20">
-                        <h4>Giá</h4>
-                    </div>
-                    <div class="left-menu mb-30">
-                        <ul>
-                            <li><a href="re">0.000 - 30.000<span>(@ViewBag.re)</span></a></li>
-                            <li><a href="vua">30.000 -80.000<span>(@ViewBag.vua)</span></a></li>
-                            <li><a href="dat">Trên 80.000 <span>(@ViewBag.dat)</span></a></li>
-                        </ul>
-                    </div>
+                    
+                  
 
                     <div class="banner-area mb-30">
                         <div class="banner-img-2">
@@ -101,7 +82,7 @@
                                     <div class="product-wrapper mb-40">
                                         <div class="product-img">
                                             <a href="ProductDetails/@it.MaSach">
-                                                <img src="<c:url value="/assets/user/img/product/${item.Anh}" /> " alt="book" class="primary"/>
+                                                <img src="<c:url value="/assets/user/img/product/${item.anh}" /> " alt="book" class="primary"/>
                                             </a>
                                             <div class="product-flag">
                                                 <ul>
@@ -120,10 +101,10 @@
                                                     <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                 </ul>
                                             </div>
-                                            <h4><a href="ProductDetails/@it.MaSach" title="Details">@it.TenSach</a></h4>
+                                            <h4><a href="BookShop/chi-tiet-san-pham/${item.maSach}" title="Details">${item.tenSach}</a></h4>
                                             <div class="product-price">
                                                 <ul>
-                                                    <li>@it.Gia đ</li>
+                                                    <li>${item.gia}</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -133,7 +114,7 @@
                                             </div>
                                             <div class="add-to-link">
                                                 <ul>
-                                                    <li><a href="ProductDetails/@it.MaSach" title="Details"><i class="fa fa-external-link"></i></a></li>
+                                                    <li><a href="BookShop/chi-tiet-san-pham/${item.maSach}" title="Details"><i class="fa fa-external-link"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>

@@ -40,11 +40,11 @@
                         <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
                             <div class="product-info-main">
                                 <div class="page-title">
-                                    <h1>@Model.TenSach</h1>
+                                    <h1>${detailProduct.tenSach}</h1>
                                 </div>
                                 <div class="product-reviews-summary">
                                     <div class="reviews-actions">
-                                        <p><strong>Thể loại : @Model.LOAISACH.TenLoaiSach</strong></p>
+                                        <p><strong>Thể loại : </strong></p>
                                         <p><strong>Tác giả : Tuệ Văn</strong></p>
                                         <p><strong>Nhà xuất bản: @Model.NHAXUATBAN.TenNXB</strong></p>
                                         <p><strong>Năm xuất bản: @Model.NamXB</strong></p>

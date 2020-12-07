@@ -88,15 +88,17 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+
+import BookShop.Entity.LoaiSach;
 import BookShop.Entity.Sach;
 
 @Repository(value = "SachDao")
 @Transactional(rollbackFor = Exception.class)
-public class SachDao {
+public class SachDao  {
 	@PersistenceContext
 	private EntityManager entityManager;
 
-	public void persist(final Sach customer) {
+	public void persist(final Sach customer) { 
 		entityManager.persist(customer);
 	}
 
@@ -111,5 +113,24 @@ public class SachDao {
 	public List<Sach> findAll() {
 		return entityManager.createQuery("Select s From Sach s Where s.soLuong > 0", Sach.class).getResultList();
 	}
+	
+	public List<LoaiSach> selectLoaiSach(){
+		 return entityManager.createQuery("Select s From LoaiSach s Where s.maLoaiSach > 0", LoaiSach.class).getResultList();
+	}
+	
+
+	
+	 public List<Sach> selectDetailBook(int id) { 
+		return  entityManager.createQuery("Select s From Sach s Where s.soLuong > 0", Sach.class).getResultList();
+			
+			}
+	
+	 public List<Sach> findProduct(int id) { 
+			return  entityManager.createQuery("Select s From Sach s Where s.soLuong > 0 and s.maLoaiSach="+id, Sach.class).getResultList();
+				
+				}
+
+	 
+	 
 
 }
